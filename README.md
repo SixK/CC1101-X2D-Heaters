@@ -2,7 +2,7 @@
 
 Handle your compatible to X2D protocol heaters (Delta dore) with an arduino
 
-Requierements :  
+### Requierements :  
 - RFBee (or any other CC1101 based device)  
 - UartSBee Usb to serial converter (or any thing that can upload firmware to Rfbee)  
 - USB DVB Key (compatible with SDR) 
@@ -26,16 +26,16 @@ Compile and upload Arduino Sketch to RFbee with your RFBee on the UartSBee.
 
 Control your RFbee with Arduino Ide Serial monitor or any serial tool Sending commands like "Sun1" to switch from Moon (Eco mode) to Sun (Comfort Mode) on Area 1. (or "Moon1" to switch from Sun to Moon on Area 1) 
 
-Compile Arduino Sketch for RFBee :  
+### Compile Arduino Sketch for RFBee :  
 Don't forget to set UARTSbee on 3.3v switch before connecting (RFBee and CC1101 don't support 5.0v)  
 Set board parameters to "Lilypad Arduino" and ATMega328 for RFBee V1.2 (ATMega168 for V1.1 and previous versions)  
 Double click on cc1101-X2D-Heaters.ino file  
 Modify "X2D_Heater_Messages.h" (Default values are mine and won't work with your X2D heaters)  
 
-Configure Arduino IDE Serial monitor :  
+### Configure Arduino IDE Serial monitor :  
 Set end of line drop down button to "New Line" and Baudrate to 9600 baud in Serial monitor.  
 
-Commands to Use cc1101-X2D-Heaters :  
+### Commands to Use cc1101-X2D-Heaters :  
 Sun1 -> Switch from Moon to Sun on Area 1  
 Moon1 -> Switch from Sun to Moon on Area 1  
 Sun2 -> Switch from Moon to Sun on Area 2  
