@@ -47,7 +47,7 @@ Moon3 -> Switch from Sun to Moon on Area 3
 pyX2DCmd.py is a simple python script to send commands to RFBee.
 It has been tested working under Windows and Raspbian (Raspberry Pi)
 This script can be run with such a command line :  
-python pyX2Dcmd.py Sun3  
+python pyX2DCmd.py Sun3  
 
 Before running the script don't forget to edit Serial parameters at beginning of file to suite your Serial Port.  
 It can be added in crontab or scheduled tasks to rule your Heaters a bit more friendly...  
