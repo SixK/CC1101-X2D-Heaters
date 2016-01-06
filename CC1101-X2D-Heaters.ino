@@ -13,9 +13,6 @@ boolean stringComplete = false;  // whether the string is complete
 byte counter;
 byte b;
 
-//byte syncWord = 1;
-// byte syncWord[] = {0x55, 0x55};
-
 
 void blinker(){
 digitalWrite(LEDOUTPUT, HIGH);
@@ -51,7 +48,7 @@ void setup()
   cc1101.disableAddressCheck();
   //cc1101.setTxPowerAmp(PA_LowPower);
 
-  delay(1000);
+  delay(750);
 
   Serial.print("CC1101_PARTNUM ");
   Serial.println(cc1101.readReg(CC1101_PARTNUM, CC1101_STATUS_REGISTER));
@@ -66,13 +63,11 @@ void setup()
 }
 
 
-void send_data(byte *array) {
+void send_data(byte *array, byte nb) {
   CCPACKET data;
   byte blinkCount=counter++;
 
-  // Going to Sun
-
-  data.length = 14;
+  data.length = nb;
   for(int i=0;i<data.length;i++) data.data[i] = array[i];
 
   if(cc1101.sendData(data)){
@@ -83,24 +78,23 @@ void send_data(byte *array) {
     Serial.println("sent failed :(");
   }
 
-delay(10000);
 }
 
 void loop()
 {
   // print the string when a newline arrives:
   if (stringComplete) {
-      if(inputString == "Sun1")  send_data(SunArea1);
-      if(inputString == "Moon1")  send_data(MoonArea1);
-	  	  if(inputString == "Asso1")  send_data(AssoArea1);
+      if(inputString == "Sun1")  send_data(SunArea1, sizeof(SunArea1));
+      if(inputString == "Moon1")  send_data(MoonArea1, sizeof(MoonArea1));
+	  	  if(inputString == "Asso1")  send_data(AssoArea1, sizeof(AssoArea1));
 
-      if(inputString == "Sun2")  send_data(SunArea2);
-      if(inputString == "Moon2")  send_data(MoonArea2);
-		if(inputString == "Asso2")  send_data(AssoArea2);
+      if(inputString == "Sun2")  send_data(SunArea2, sizeof(SunArea2));
+      if(inputString == "Moon2")  send_data(MoonArea2, sizeof(MoonArea2));
+		if(inputString == "Asso2")  send_data(AssoArea2, sizeof(AssoArea2));
 	
-      if(inputString == "Sun3")  send_data(SunArea3);
-      if(inputString == "Moon3")  send_data(MoonArea3);
-	  if(inputString == "Asso3")  send_data(AssoArea3);
+      if(inputString == "Sun3")  send_data(SunArea3, sizeof(SunArea3));
+      if(inputString == "Moon3")  send_data(MoonArea3, sizeof(MoonArea3));
+	  if(inputString == "Asso3")  send_data(AssoArea3, sizeof(AssoArea3));
 	
     Serial.println(inputString);
     // clear the string:
@@ -109,10 +103,6 @@ void loop()
   }
   mySerialEvent();
 
-
-// send_data();
-
-  delay(4000);
 }
 
 /*
