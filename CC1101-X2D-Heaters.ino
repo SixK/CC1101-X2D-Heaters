@@ -92,13 +92,16 @@ void loop()
   if (stringComplete) {
       if(inputString == "Sun1")  send_data(SunArea1);
       if(inputString == "Moon1")  send_data(MoonArea1);
+	  	  if(inputString == "Asso1")  send_data(AssoArea1);
 
       if(inputString == "Sun2")  send_data(SunArea2);
       if(inputString == "Moon2")  send_data(MoonArea2);
-    
+		if(inputString == "Asso2")  send_data(AssoArea2);
+	
       if(inputString == "Sun3")  send_data(SunArea3);
       if(inputString == "Moon3")  send_data(MoonArea3);
-    
+	  if(inputString == "Asso3")  send_data(AssoArea3);
+	
     Serial.println(inputString);
     // clear the string:
     inputString = "";
@@ -124,6 +127,7 @@ void mySerialEvent() {
     // if the incoming character is a newline, set a flag
     // so the main loop can do something about it:
     if (inChar == '\n') {
+	Serial.println("end of line");
       stringComplete = true;
     }else
     {
