@@ -43,10 +43,10 @@ Moon2 -> Switch from Sun to Moon on Area 2
 Sun3 -> Switch from Moon to Sun on Area 3  
 Moon3 -> Switch from Sun to Moon on Area 3  
 
-### Python Script :
-pyX2DCmd.py is a simple python script to send commands to RFBee.
-This script can be run with such a command line :
-python pyX2Dcmd.py Sun3
-It can be added in crontab or scheduled tasks to rule your Heaters a bit more friendly...
+### Python Script :  
+pyX2DCmd.py is a simple python script to send commands to RFBee.  
+This script can be run with such a command line :  
+python pyX2Dcmd.py Sun3  
+It can be added in crontab or scheduled tasks to rule your Heaters a bit more friendly...  
 
 SixK
