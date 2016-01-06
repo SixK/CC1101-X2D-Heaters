@@ -49,7 +49,7 @@ It has been tested working under Windows and Raspbian (Raspberry Pi)
 This script can be run with such a command line :  
 python pyX2Dcmd.py Sun3  
 
-Before running the script don't forget to edit Serial parameters at beginning of file to suite your Serial Port.
+Before running the script don't forget to edit Serial parameters at beginning of file to suite your Serial Port.  
 It can be added in crontab or scheduled tasks to rule your Heaters a bit more friendly...  
 
 SixK
