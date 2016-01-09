@@ -13,8 +13,9 @@ First capture X2D messages from your Deltia or any X2D emitter device with your 
 rtl_433 -D -A -f 868340000  
 
 2 messages of 74 bytes length should be captured when pressing a manual heater command on Deltia emitter device.  
-Only 1rst message is necessary.  
-In this message only 14 first bytes are mandatory  
+1rst message is for Comfort/Eco mode.  
+2nd message is for Power On/Off and HG (Frost prevent) mode
+In this messages only 14 first bytes are mandatory  (13 first bytes for Association message)
 
 Capture messages when switching from Moon to Sun and from Sun to Moon for all areas you want to control.  
 
@@ -37,11 +38,23 @@ Set end of line drop down button to "New Line" and Baudrate to 9600 baud in Seri
 
 ### Commands to Use cc1101-X2D-Heaters :  
 Sun1 -> Switch from Moon to Sun on Area 1  
-Moon1 -> Switch from Sun to Moon on Area 1  
+Moon1 -> Switch from Sun to Moon on Area 1 
+Hg1 -> Go to "Frost Prevent" mode on Area2 (Hors Gel). (Use On or Sun command to exit this mode)  
+Off1 -> Go to Power Off mode on Area2. (Use On command to exit this mode)  
+On1 -> Power On mode on Area2 (can be used to exit Power Off or "Frost Prevent" mode)  
+
 Sun2 -> Switch from Moon to Sun on Area 2  
 Moon2 -> Switch from Sun to Moon on Area 2  
+Hg2 -> Go to "Frost Prevent" mode on Area2 (Hors Gel). (Use On or Sun command to exit this mode)  
+Off2 -> Go to Power Off mode on Area2. (Use On command to exit this mode)  
+On2 -> Power On mode on Area2 (can be used to exit Power Off or "Frost Prevent" mode)  
+
 Sun3 -> Switch from Moon to Sun on Area 3  
 Moon3 -> Switch from Sun to Moon on Area 3  
+Hg3 -> Go to "Frost Prevent" mode on Area3 (Hors Gel). (Use On or Sun command to exit this mode)  
+Off3 -> Go to Power Off mode on Area3. (Use On command to exit this mode)  
+On3 -> Power On mode on Area3 (can be used to exit Power Off or "Frost Prevent" mode)  
+
 
 ### Python Script :  
 pyX2DCmd.py is a simple python script to send commands to RFBee.
@@ -51,5 +64,6 @@ python pyX2DCmd.py Sun3
 
 Before running the script don't forget to edit Serial parameters at beginning of file to suite your Serial Port.  
 It can be added in crontab or scheduled tasks to rule your Heaters a bit more friendly...  
+
 
 SixK

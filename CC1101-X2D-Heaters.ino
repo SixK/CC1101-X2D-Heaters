@@ -86,15 +86,26 @@ void loop()
   if (stringComplete) {
       if(inputString == "Sun1")  send_data(SunArea1, sizeof(SunArea1));
       if(inputString == "Moon1")  send_data(MoonArea1, sizeof(MoonArea1));
-	  	  if(inputString == "Asso1")  send_data(AssoArea1, sizeof(AssoArea1));
-
+	  if(inputString == "Asso1")  send_data(AssoArea1, sizeof(AssoArea1));
+	  if(inputString == "Off1")  send_data(OffArea1, sizeof(OffArea1));
+		if(inputString == "On1")  send_data(OnArea1, sizeof(OnArea1));
+		if(inputString == "Hg1")  send_data(HgArea1, sizeof(HgArea1));
+	  
       if(inputString == "Sun2")  send_data(SunArea2, sizeof(SunArea2));
       if(inputString == "Moon2")  send_data(MoonArea2, sizeof(MoonArea2));
 		if(inputString == "Asso2")  send_data(AssoArea2, sizeof(AssoArea2));
-	
+	  if(inputString == "Off2")  send_data(OffArea2, sizeof(OffArea2));
+		if(inputString == "On2")  send_data(OnArea2, sizeof(OnArea2));
+		if(inputString == "Hg2")  send_data(HgArea2, sizeof(HgArea2));
+
+		
       if(inputString == "Sun3")  send_data(SunArea3, sizeof(SunArea3));
       if(inputString == "Moon3")  send_data(MoonArea3, sizeof(MoonArea3));
 	  if(inputString == "Asso3")  send_data(AssoArea3, sizeof(AssoArea3));
+		if(inputString == "Off3")  send_data(OffArea3, sizeof(OffArea3));
+		if(inputString == "On3")  send_data(OnArea3, sizeof(OnArea3));
+		if(inputString == "Hg3")  send_data(HgArea3, sizeof(HgArea3));
+
 	
     Serial.println(inputString);
     // clear the string:
