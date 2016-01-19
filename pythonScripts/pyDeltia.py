@@ -63,7 +63,7 @@ print stat2
 
 os.system("python %spyX2DCmd.py %s1"%(path,stat1))
 time.sleep(15)
-os.system("python %spyX2DCmd.py %s1"%(path,stat2))
+os.system("python %spyX2DCmd.py %s2"%(path,stat2))
 
 
 '''  
