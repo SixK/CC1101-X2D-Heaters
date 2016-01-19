@@ -61,7 +61,9 @@ class HandlePlanning :
 				status = line[self._dayPos + hPos]
 				if status == '' :
 					status = 0					
-					
+				if status == '1' :
+					status = 1
+
 				print status	
 				break
 				
