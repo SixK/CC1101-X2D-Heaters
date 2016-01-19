@@ -12,7 +12,7 @@ Planning file must be saved as csv file with values quoted and ";" separator
 
 Call it in crontab with this parameters :
 # m h  dom mon dow   command
-30 * * * * python /home/pi/pyDeltia.py
+*/30 * * * * python /home/pi/pyDeltia.py
 
 This script will be called each day every 30 minutes
 '''
