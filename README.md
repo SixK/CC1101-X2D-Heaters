@@ -56,7 +56,7 @@ Off3 -> Go to Power Off mode on Area3. (Use On command to exit this mode)
 On3 -> Power On mode on Area3 (can be used to exit Power Off or "Frost Prevent" mode)  
 
 
-### Python Script :  
+### Python Scripts :  
 pyX2DCmd.py is a simple python script to send commands to RFBee.
 It has been tested working under Windows and Raspbian (Raspberry Pi)
 This script can be run with such a command line :  
@@ -64,6 +64,17 @@ python pyX2DCmd.py Sun3
 
 Before running the script don't forget to edit Serial parameters at beginning of file to suite your Serial Port.  
 It can be added in crontab or scheduled tasks to rule your Heaters a bit more friendly...  
+
+pyDeltia.py a script that parse  chauffage.csv file to command Heaters on a week.
+This script import HandlePlanning a class dedicated to chauffage.csv file parsing.
+This script can be called in crontab each 30 minutes and is actually looking for Area 1 ("Zone 1") and Area 2 ("Zone 2") defined state for current time.
+It then call pyX2DCmd.py to send commands to RFbee device
+
+### chauffage.ods openOffice file
+A file to define Heaters planning by Area for a Week.
+Actually 30 minutes periods are defined just as a Deltia Emitter can be set, but any periods could be defined. (every 15 minutes, every 5 minutes, ...)
+Then you will have to edit crontab to poll state according to period you have defined.
+File must be saved as csv ("chauffage.csv") with ";" separator and values quoted (").
 
 
 SixK
