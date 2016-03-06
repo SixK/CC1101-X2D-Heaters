@@ -70,11 +70,29 @@ This script import HandlePlanning a class dedicated to chauffage.csv file parsin
 This script can be called in crontab each 30 minutes and is actually looking for Area 1 ("Zone 1") and Area 2 ("Zone 2") defined state for current time.
 It then call pyX2DCmd.py to send commands to RFbee device
 
+X2D_WebPoller.py a script that call a Web page to get heaters mode to set.
+This script is to use with X2D web site provided in "www" directory.
+
+
 ### chauffage.ods openOffice file
 A file to define Heaters planning by Area for a Week.
 Actually 30 minutes periods are defined just as a Deltia Emitter can be set, but any periods could be defined. (every 15 minutes, every 5 minutes, ...)
 Then you will have to edit crontab to poll state according to period you have defined.
 File must be saved as csv ("chauffage.csv") with ";" separator and values quoted (").
+
+### www directory  
+A minimal 2 zones Heaters IHM Web manager. 
+In Auto mode, Heaters status are following a planning file (chauffage.ods).
+In Manual mode, user choose Heaters status for Zone 1 and Zone 2.
+
+Functionnalities are :  
+Auto/Manual mode   
+Turn Zone1 / Zone2 manually to Comfort or Eco mode.  
+Upload heaters Planning (openoffice .ods files)  
+
+This Web interface is to use with X2D_WebPoller.py script
+Requierements : 
+A Web server with PHP >5.6  
 
 
 SixK
