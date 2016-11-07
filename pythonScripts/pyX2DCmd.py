@@ -20,7 +20,7 @@ ser.isOpen()
 if len(sys.argv) != 2 :
 	print "This tool need a command to send"
 else:
-	cmd=sys.argv[1]
+	cmd = sys.argv[1]
 	out = ''
 	# wait for RFbee init
 	time.sleep(3)

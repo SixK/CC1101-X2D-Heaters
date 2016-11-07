@@ -17,13 +17,13 @@ Call it in crontab with this parameters :
 This script will be called each day every 30 minutes
 '''
 
-path=os.path.dirname(__file__)+'/'
-if path=='/' :
-        path='./'
+path = os.path.dirname(__file__)+'/'
+if path == '/' :
+	path = './'
 
-data=list()
-dayNames=['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
-stateNames=['Moon','Sun']
+data = list()
+dayNames = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+stateNames = ['Moon','Sun']
 
 with open('chauffage.csv', 'rb') as f:
 	reader = csv.reader(f, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
@@ -37,17 +37,17 @@ zone2=HandlePlanning.HandlePlanning()
 zone1.setData(data)
 zone2.setData(data)
 
-horaires=zone1.getHoraires()
+horaires = zone1.getHoraires()
 zone2.getHoraires()
 	
 zone1.getZone("Zone 1")
 zone2.getZone("Zone 2")
 
-d=datetime.now()
-dayName=dayNames[d.weekday()]
-print(dayName)	
+d = datetime.now()
+dayName = dayNames[d.weekday()]
+print(dayName)
 
-timeStr=d.strftime("%H:%M:%S")
+timeStr = d.strftime("%H:%M:%S")
 print timeStr
 
 '''
@@ -56,9 +56,9 @@ print timeStr
 # timeStr="07:00:00"
 # timeStr="06:35:00"
 '''
-stat1=stateNames[zone1.getStatus(dayName, timeStr)]
+stat1 = stateNames[zone1.getStatus(dayName, timeStr)]
 print stat1
-stat2=stateNames[zone2.getStatus(dayName, timeStr)]
+stat2 = stateNames[zone2.getStatus(dayName, timeStr)]
 print stat2
 
 os.system("python %spyX2DCmd.py %s1"%(path,stat1))
