@@ -79,13 +79,7 @@ class HandlePlanning
 		{
 			if (strtolower($line[$this->_dayPos-1]) == $day)
 			{
-				$status = $line[$this->_dayPos + $hPos];
-				if ($status == '')
-					$status = 0;					
-				if ($status == '1')
-					$status = 1;
-
-				// echo $status;	
+				$status = intval($line[$this->_dayPos + $hPos]);
 				break;
 			}
 		}		
